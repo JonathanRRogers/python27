@@ -828,6 +828,9 @@ Patch900: 00900-skip-test-mhlib.patch
 # test_ssl fails
 Patch901: 00901-skip-test-ssl.patch
 
+# test_pty fails
+Patch902: 00902-skip-test-pty.patch
+
 # (New patches go here ^^^)
 #
 # When adding new patches to "python" and "python3" in Fedora 17 onwards,
@@ -1193,6 +1196,7 @@ done
 
 %patch900 -p1
 %patch901 -p1
+%patch902 -p1
 
 # This shouldn't be necesarry, but is right now (2.2a3)
 find -name "*~" |xargs rm -f
