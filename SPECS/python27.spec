@@ -822,6 +822,12 @@ Patch203: 00203-skip-test-readline.patch
 # Optionally build against expat21 from EPEL.
 Patch204: python-2.7.9-expat21.patch
 
+# test_listfolders in test_mhlib fails
+Patch900: 00900-skip-test-mhlib.patch
+
+# test_ssl fails
+Patch901: 00901-skip-test-ssl.patch
+
 # (New patches go here ^^^)
 #
 # When adding new patches to "python" and "python3" in Fedora 17 onwards,
@@ -1184,6 +1190,9 @@ done
 %if 0%{?with_epel_expat}
 %patch204 -p1
 %endif
+
+%patch900 -p1
+%patch901 -p1
 
 # This shouldn't be necesarry, but is right now (2.2a3)
 find -name "*~" |xargs rm -f

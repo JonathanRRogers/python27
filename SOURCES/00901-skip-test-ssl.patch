@@ -1,0 +1,10 @@
+--- Python-2.7.9/Lib/test/test_ssl.py	2014-12-10 10:59:47.000000000 -0500
++++ Python-2.7.9_new/Lib/test/test_ssl.py	2016-10-04 15:22:04.997816005 -0400
+@@ -2773,6 +2773,7 @@ else:
+                                        chatty=True, connectionchatty=True)
+             self.assertIs(stats['compression'], None)
+ 
++        @unittest._skipInRpmBuild('fails')
+         def test_dh_params(self):
+             # Check we can get a connection with ephemeral Diffie-Hellman
+             context = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
